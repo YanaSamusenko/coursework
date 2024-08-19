@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./scss/app.scss" />
+    <script src="./js/app.js" type="module"></script>
+    <title>Wildberries</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="" class="header__link">
+        <img
+          src="./img/wb-logo.svg"
+          alt="Wildberries Logo"
+          class="header__link-image"
+        />
+      </a>
+      <input
+        type="search"
+        class="header__search"
+        placeholder="Искать на Wildberries"
+      />
+      <button class="header__profile">
+        <i class="fa-regular fa-user"></i>
+        <span>Войти</span>
+      </button>
+      <button class="header__basket">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span>Корзина</span>
+        <div class="basket_count modal__hide"></div>
+      </button>
+    </header>
+  </body>
+</html>
