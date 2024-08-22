@@ -9,28 +9,205 @@
     <title>Wildberries</title>
   </head>
   <body>
-    <header class="header">
-      <a href="" class="header__link">
-        <img
-          src="./img/wb-logo.svg"
-          alt="Wildberries Logo"
-          class="header__link-image"
+    <div id="root">
+      <header class="header">
+        <a href="/" class="header__link">
+          <img
+            src="./img/wb-logo.svg"
+            alt="Wildberries Logo"
+            class="header__link-image"
+          />
+        </a>
+        <input
+          type="search"
+          class="header__search"
+          placeholder="Искать на Wildberries"
         />
-      </a>
-      <input
-        type="search"
-        class="header__search"
-        placeholder="Искать на Wildberries"
-      />
-      <button class="header__profile">
-        <i class="fa-regular fa-user"></i>
-        <span>Войти</span>
-      </button>
-      <button class="header__basket">
-        <i class="fa-solid fa-basket-shopping"></i>
-        <span>Корзина</span>
-        <div class="basket_count modal__hide"></div>
-      </button>
-    </header>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <i class="fa-solid fa-basket-shopping"></i>
+          <div class="basket_count modal__hide"></div>
+        </button>
+      </header>
+      <section class="main">
+        <div class="container__carousel">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./img/swip_1.jpg" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="./img/swip_3.jpg" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="./img/swip_4.jpg" class="d-block w-100" alt="..." />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="container__modal-basket">
+          <!-- Modal -->
+          <div
+            class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+          >
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Modal title
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">...</div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card-product"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        ></div>
+        <div class="modal-dialog modal-dialog-centered">
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Modal title
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__list">
+          <div class="footer__list-title">Компания</div>
+          <ul class="footer__list">
+            <li class="footer__list-item">
+              <a href="" class="footer__link">О нас</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="" class="footer__link">Реквизиты</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="" class="footer__link">Контакты</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="" class="footer__link">Пресс-центр</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="" class="footer__link">OS.Tech</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__list">
+          <div class="footer__list-title">Мы в соцсетях</div>
+          <ul class="footer__list">
+            <li class="footer__list-item">
+              <a href="https://vk.com/wildberries_shop" class="footer__link"
+                >Вконтакте</a
+              >
+            </li>
+            <li class="footer__list-item">
+              <a href="https://t.me/wildberriesru_official" class="footer__link"
+                >Telegram</a
+              >
+            </li>
+            <li class="footer__list-item">
+              <a
+                href="https://www.youtube.com/wildberriesshop"
+                class="footer__link"
+                >YouTube</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer__rights">
+          <div class="footer__rights-item">© Wildberries 2004-2024.</div>
+          <div class="footer__rights-item">Все права защищены.</div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
