@@ -26,7 +26,7 @@ function createCardProduct(product) {
     <li class="list-group-item">${category}</li>
     </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
+    <button type="button" id="add-to-cart" class="btn btn-primary">Добавить в корзину</button>
   </div>
 </div>`;
 }
@@ -37,5 +37,13 @@ const renderCards = (products) =>
 
 fetchAndDisplayProducts().then((products) => renderCards(products));
 
-const myModalBasket = new bootstrap.Modal("#modal__basket", options);
-const myModalCard = bootstrap.Modal("#exampleModal", options);
+const addButtons = document.querySelectorAll(".card #add-to-cart");
+
+addButtons.forEach((button) =>
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    myModalCard.show();
+  })
+);
+// const myModalBasket = new bootstrap.Modal("#modal__basket", options);
+// const myModalCard = bootstrap.Modal("#exampleModal", options);

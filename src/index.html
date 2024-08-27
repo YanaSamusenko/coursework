@@ -3,35 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./favicon.ico" />
-    <link rel="stylesheet" href="./scss/app.scss" />
-    <script src="./js/app.js" type="module"></script>
     <title>Wildberries</title>
+    <link rel="stylesheet" href="./scss/app.scss" />
+    <link rel="icon" href="./img/wb.ico" type="image/png" />
+    <script type="module" src="./js/app.js" defer></script>
   </head>
   <body>
-    <div id="root">
+    <div class="wrapper">
       <header class="header">
-        <a href="/" class="header__link">
-          <img
-            src="./img/wb-logo.svg"
-            alt="Wildberries Logo"
-            class="header__link-image"
-          />
-        </a>
-        <input
-          type="search"
-          class="header__search"
-          placeholder="Искать на Wildberries"
-        />
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          <i class="fa-solid fa-basket-shopping"></i>
-          <div class="basket_count modal__hide"></div>
-        </button>
+        <div class="header__container">
+          <a href="#" class="header__logo">
+            <img src="./img/header-logo.png" alt="logo" />
+          </a>
+          <form id="searchForm">
+            <div class="form__item">
+              <input
+                type="text"
+                name="search"
+                id="searchInput"
+                placeholder="Найти на Wildberries"
+              />
+            </div>
+          </form>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <i class="fa-solid fa-basket-shopping"></i>
+            <div class="basket_count modal__hide"></div>
+          </button>
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Корзина</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <ul class="modal__list"></ul>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Закрыть
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Оформить
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
       <section class="main">
         <div class="container__carousel">
@@ -73,68 +113,12 @@
             </button>
           </div>
         </div>
-        <div class="container__modal-basket">
-          <!-- Modal -->
-          <div
-            class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-          >
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Modal title
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">...</div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                      Save changes
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="card-product"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        ></div>
-        <div class="modal-dialog modal-dialog-centered">
-          <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
+        <div class="cards">
+          <div class="container cards__container"></div>
+          <div class="modal fade" id="cardsModal" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Modal title
-                  </h1>
                   <button
                     type="button"
                     class="btn-close"
@@ -142,7 +126,7 @@
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body">...</div>
+                <div class="modal-body"></div>
                 <div class="modal-footer">
                   <button
                     type="button"
@@ -151,9 +135,6 @@
                   >
                     Close
                   </button>
-                  <button type="button" class="btn btn-primary">
-                    Save changes
-                  </button>
                 </div>
               </div>
             </div>
@@ -161,51 +142,77 @@
         </div>
       </section>
       <footer class="footer">
-        <div class="footer__list">
-          <div class="footer__list-title">Компания</div>
-          <ul class="footer__list">
-            <li class="footer__list-item">
-              <a href="" class="footer__link">О нас</a>
-            </li>
-            <li class="footer__list-item">
-              <a href="" class="footer__link">Реквизиты</a>
-            </li>
-            <li class="footer__list-item">
-              <a href="" class="footer__link">Контакты</a>
-            </li>
-            <li class="footer__list-item">
-              <a href="" class="footer__link">Пресс-центр</a>
-            </li>
-            <li class="footer__list-item">
-              <a href="" class="footer__link">OS.Tech</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__list">
-          <div class="footer__list-title">Мы в соцсетях</div>
-          <ul class="footer__list">
-            <li class="footer__list-item">
-              <a href="https://vk.com/wildberries_shop" class="footer__link"
-                >Вконтакте</a
+        <div class="wrapper">
+          <div class="footer__columns">
+            <div class="footer__column-1">
+              <a href="#"><h2 class="footer-link">Покупателям</h2></a>
+              <a href=""><p>Как сделать заказ</p></a>
+              <a href=""><p>Способы оплаты</p></a>
+              <a href=""><p>Доставка</p></a>
+              <a href=""><p>Возврат товара</p></a>
+              <a href=""><p>Возврат денежных средств</p></a>
+              <a href=""><p>Правила продажи</p></a>
+              <a href=""><p>Политика обработки персональных данных</p></a>
+              <a href=""><p>Вопросы и ответы</p></a>
+              <a href=""><p>Проверка совместимости</p></a>
+            </div>
+            <div class="footer__column-2">
+              <a href="#"><h2 class="footer-link">Партнерам</h2></a>
+              <a href=""><p>Продавайте на Wildberries</p></a>
+              <a href=""><p>Водителям</p></a>
+              <a href=""><p>Курьерам</p></a>
+              <a href=""><p>Перевозчикам</p></a>
+              <a href=""><p>Партнерский пункт выдачи</p></a>
+              <a href=""><p>Франшизный пункт выдачи</p></a>
+            </div>
+            <div class="footer__column-3">
+              <a href="#"><h2 class="footer-link">Компания</h2></a>
+              <a href=""><p>О нас</p></a>
+              <a href=""><p>Реквизиты</p></a>
+              <a href=""><p>Пресс-центр</p></a>
+              <a href=""><p>Контакты</p></a>
+              <a href=""><p>Bug Bounty</p></a>
+              <a href=""><p>Горячая линия</p></a>
+              <a href=""><p>WB.Tech</p></a>
+            </div>
+            <div class="footer__column-4">
+              <a href="#"><h2 class="footer-link">Мы в соцсетях</h2></a>
+              <a href=""><p>ВКонтакте</p></a>
+              <a href=""><p>Одноклассники</p></a>
+              <a href=""><p>YouTube</p></a>
+              <a href=""><p>Телеграм</p></a>
+            </div>
+            <div class="footer__column-5">
+              <a href="#"
+                ><h2 class="footer-link">Приложение Wildberries</h2></a
               >
-            </li>
-            <li class="footer__list-item">
-              <a href="https://t.me/wildberriesru_official" class="footer__link"
-                >Telegram</a
-              >
-            </li>
-            <li class="footer__list-item">
-              <a
-                href="https://www.youtube.com/wildberriesshop"
-                class="footer__link"
-                >YouTube</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer__rights">
-          <div class="footer__rights-item">© Wildberries 2004-2024.</div>
-          <div class="footer__rights-item">Все права защищены.</div>
+              <div class="wildberries__box">
+                <div class="qr"></div>
+                <p class="footer-apps__text">
+                  Наведите камеру, чтобы скачать приложение
+                </p>
+                <div class="apps">
+                  <div class="apple"></div>
+                  <div class="gplay"></div>
+                  <div class="huawei"></div>
+                  <div class="rustore"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__copyright">
+            <p>
+              2004-2024 © Wildberries — модный интернет-магазин одежды, обуви и
+              аксессуаров. Все права защищены. Доставка по всей России.
+            </p>
+            <p>
+              На Торговой площадке wildberries.ru
+              <a href="#" class="footer__link"
+                >применяются рекомендательные технологии</a
+              >. Адрес для&nbsp;направления юридически значимых сообщений:
+              sales@wildberries.ru
+            </p>
+          </div>
         </div>
       </footer>
     </div>
