@@ -5,6 +5,7 @@ import * as bootstrap from "bootstrap";
 const modal = document.getElementById("cardsModal");
 const cartModal = document.getElementById("exampleModal");
 const inputSearch = document.querySelector("#searchInput");
+const formSearch = document.querySelector("#formSearch");
 
 // Переменные для хранения данных
 let cards = [];
@@ -18,30 +19,33 @@ fetch("https://fakestoreapi.com/products")
     cards = json;
   })
   .then(() => renderCards(cards))
-
-  .then(() => onClickAddToCart())
   .catch((err) => console.log(err));
 
 // Функция для создания карточки
 function createCard(card) {
   return `
-    <div class="cards__card" id="${card.id}" style="width: 18rem;">
-      <img src="${card.image}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${card.title}</h5>
-        <p class="card-text">${card.price}</p>
+      <div class="cards__card" id="${card.id}" style="width: 18rem;">
+         <div class="cards__card__image">
+           <img src="${card.image}" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">${card.title}</h5>
+          <p class="card-text">${formatPrice(card.price)}</p>
+        </div>
+        <div class="card-category">
+          <p class="category-text">${card.category}</p>
+        </div>
+        <div class="card-body">
+          <button type="button" id="add-to-cart" class="btn btn-primary">Добавить в корзину</button>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">${card.description}</li>
-        <li class="list-group-item">${card.category}</li>
-      </ul>
-      <div class="card-body">
-        <button type="button" id="add-to-cart" class="btn btn-primary">Добавить в корзину</button>
-      </div>
-    </div>
-   `;
+    `;
 }
 
+// Функция для форматирования цены
+function formatPrice(price) {
+  return `$${price.toFixed(2)}`;
+}
 // Функция для добавления карточки в корзину
 function addToCart(card) {
   const item = cart.find((item) => item.id === card.id);
@@ -63,29 +67,29 @@ function createCart() {
     0
   );
   return `
-    <div class="cart">
-      ${cart.map(createCartCard).join("")}
-      <p class="cart-total">Общая цена: ${totalPrice}</p>
-      <p class="cart-total">Общее количество: ${totalQuantity}</p>
-    </div>
-  `;
+      <div class="cart">
+        ${cart.map(createCartCard).join("")}
+        <p class="cart-total">Общая цена: ${totalPrice}</p>
+        <p class="cart-total">Общее количество: ${totalQuantity}</p>
+      </div>
+    `;
 }
 
 // Функция для создания карточки в корзине
 function createCartCard(card) {
   return `
-    <div class="cart-card" id="${card.id}">
-      <img src="${card.image}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${card.title}</h5>
-        <p class="card-text">${card.price}</p>
-        <p class="card-text">Количество: ${card.quantity}</p>
-        <button class="btn btn-danger" id="remove-from-cart" data-id="${card.id}">Удалить</button>
-        <button class="btn btn-primary" id="increase-quantity" data-id="${card.id}">+</button>
-        <button class="btn btn-primary" id="decrease-quantity" data-id="${card.id}">-</button>
+      <div class="cart-card" id="${card.id}">
+        <img src="${card.image}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${card.title}</h5>
+          <p class="card-text">${card.price}</p>
+          <p class="card-text">Количество: ${card.quantity}</p>
+          <button class="btn btn-danger" id="remove-from-cart" data-id="${card.id}">Удалить</button>
+          <button class="btn btn-primary" id="increase-quantity" data-id="${card.id}">+</button>
+          <button class="btn btn-primary" id="decrease-quantity" data-id="${card.id}">-</button>
+        </div>
       </div>
-    </div>
-  `;
+    `;
 }
 
 // Обработчик событий для кнопок в корзине
@@ -184,8 +188,8 @@ function saveCart(cart) {
 function updateCartModal() {
   const cartModalBody = cartModal.querySelector(".modal-body");
   cartModalBody.innerHTML = `
-    ${createCart()}
-  `;
+      ${createCart()}
+    `;
   handleCartButtons();
 }
 // Функция для фильтрации карточек
@@ -204,6 +208,7 @@ function renderCards(cards) {
   cards.forEach((card) => {
     cardsContainer.innerHTML += createCard(card);
   });
+  onClickAddToCart();
 }
 
 // Инициализация

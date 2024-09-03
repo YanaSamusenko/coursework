@@ -1,36 +1,32 @@
-// Vendors
-@import "bootstrap/scss/bootstrap";
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css);
-// Components
+// Import the entire Bootstrap CSS
 
-#root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-color: blueviolet;
-}
+@import "./variables.scss";
+@import "./cdn.scss";
+@import "./header.scss";
+@import "./main.scss";
+@import "./footer.scss";
+
+// Variables
+// $primary-color: #a252d4;
+// $secondary-color: #a724f9;
+// $background-color: #f9f9f9;
+// $text-color: #333;
+
+// Styles for your project
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
-body {
+html {
   font-family: "Montserrat", sans-serif;
-  background: linear-gradient(to right, #cb11ab 0, #481173 100%);
 }
 
-.wrapper {
-  margin: 0 auto;
+.container {
   max-width: 1440px;
-  width: 100%;
-}
-
-.main {
-  position: relative;
-  margin: 2px;
-  padding: 0 20px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.55);
+  margin: auto;
+  // min-height: 100vh;
 }
