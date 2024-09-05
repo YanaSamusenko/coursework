@@ -4,16 +4,17 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
+  padding: 0 20px;
   width: 100%;
   min-height: 100vh;
   background-color: #fff;
+  margin-bottom: 30px;
 }
 
 // Carousel Styles
 .container__carousel {
   width: 100%;
-  margin: auto;
+  margin: 0 auto 30px;
 }
 
 .carousel-inner {
@@ -114,6 +115,49 @@
       font-size: 14px;
       font-weight: 500;
       color: $text-color;
+    }
+  }
+}
+
+// Modal Styles
+
+.modal__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .modal__card-body {
+    margin-bottom: 15px;
+    .modal__card-title {
+      text-transform: capitalize;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: $text-color;
+      text-align: center;
+    }
+    .modal__card-price {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: $price-color;
+      text-align: center;
+    }
+    .modal__card-text {
+      font-size: 15px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 10px;
+      color: $text-color;
+    }
+  }
+
+  .modal__card-img {
+    margin: 0 auto 30px;
+    width: 300px;
+
+    img {
+      width: 100%;
     }
   }
 }
