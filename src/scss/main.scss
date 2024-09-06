@@ -1,8 +1,4 @@
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   gap: 20px;
   padding: 0 20px;
   width: 100%;
@@ -70,15 +66,15 @@
   background-color: #fff;
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out;
-  height: 400px;
+  height: 500px;
 
   &:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
 
   .cards__card__image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 320px;
     border-radius: 10px;
     overflow: hidden;
 
@@ -91,29 +87,30 @@
   }
 
   .card-title {
-    text-transform: lowercase;
-    font-size: 15px;
+    text-transform: capitalize;
+    font-size: 18px;
     font-weight: 500;
     text-align: center;
     margin-bottom: 10px;
     color: $text-color;
+    font-family: "Montserrat", sans-serif;
   }
 
   .card-text {
     font-size: 22px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: $price-color;
   }
 
   .card-category {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
     p {
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 400;
       color: $text-color;
     }
   }

@@ -34,7 +34,7 @@
   input {
     width: 100%;
     line-height: 60px;
-    font-size: 25px;
+    font-size: 22px;
     border-radius: 20px;
     border: none;
     outline: none;
@@ -87,7 +87,7 @@
           width: 50%;
 
           img {
-            height: 150px;
+            height: 250px;
             max-width: 400px;
             object-fit: fill;
             object-position: center;
@@ -98,10 +98,10 @@
       .card-body {
         width: 50%;
         .card-title {
-          font-size: 18px;
-          font-weight: 500;
+          font-size: 20px;
+          font-weight: 600;
           color: $text-color;
-          text-transform: lowercase;
+          text-transform: capitalize;
           font-family: "Montserrat", sans-serif;
         }
 
@@ -135,7 +135,4 @@
       color: $price-color;
     }
   }
-}
-
-.modal-footer {
 }
