@@ -1,6 +1,7 @@
+// Класс для работы с корзиной
 export class Cart {
   constructor() {
-    this.cart = this.loadCartData();
+    this.cart = this.loadCartData(); // Загрузка данных корзины из localStorage
   }
 
   // Метод для загрузки данных корзины из localStorage
@@ -9,7 +10,7 @@ export class Cart {
     return storedCart ? JSON.parse(storedCart) : [];
   }
 
-  //Метод для сохранения данных корзины в localStorage
+  // Метод для сохранения данных корзины в localStorage
   saveCartData() {
     if (this.cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(this.cart));
@@ -70,7 +71,7 @@ export class Cart {
       <div class="card-body">
         <h5 class="card-title">${product.title}</h5>
         <p class="card-text-category">${product.description}</p>
-        <p class="card-text-price">$ ${product.price}</p>
+        <p class="card-text-price">$ ${product.price * product.quantity}</p>
         <p class="card-text">Количество: ${product.quantity}</p>
         <button class="btn btn-danger" id="remove-from-cart" data-id="${product.id}">Удалить</button>
         <button class="btn btn-primary" id="increase-quantity" data-id="${product.id}">+</button>
@@ -80,7 +81,7 @@ export class Cart {
     `;
   }
 
-  // Метод для отрисовки корзины
+  // Метод для рендеринга корзины
   renderCart() {
     const totalQuantity = this.cart.reduce(
       (acc, item) => acc + item.quantity,

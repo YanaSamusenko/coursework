@@ -3,7 +3,6 @@ import { Cart } from "./cart.js";
 import { fetchProducts } from "./api.js";
 import * as bootstrap from "bootstrap";
 
-// Variables
 const modalElement = document.getElementById("cardsModal");
 const cartModalElement = document.getElementById("exampleModal");
 const searchInputElement = document.querySelector("#searchInput");
@@ -12,14 +11,14 @@ const formElement = document.querySelector("#searchForm");
 let products = [];
 const cart = new Cart();
 
-// Функция инициализации
+// Инициализация приложения
 async function init() {
   products = await fetchProducts();
   renderProductCards(products);
   updateCartModal();
 }
 
-// Функция отрисовки карточек
+// Функция для рендеринга карточек продуктов
 function renderProductCards(products) {
   const productCardsContainer = document.querySelector(".cards__container");
   productCardsContainer.innerHTML = "";
@@ -37,7 +36,7 @@ function renderProductCards(products) {
   addProductToCartButtonClicked();
 }
 
-// Функция отрисовки модального окна
+// Функции для обработки кликов по кнопкам добавления в корзину и показа модальной карточки продукта
 function addProductToCartButtonClicked() {
   const modal = new bootstrap.Modal(modalElement);
   const addButtons = Array.prototype.slice.call(
@@ -52,7 +51,6 @@ function addProductToCartButtonClicked() {
   });
 }
 
-// Функция обработки нажатия на кнопки
 function handleButtonClick(event, button, modal) {
   if (event.target.id === "add-to-cart") {
     addProductToCartHandler(button);
@@ -79,20 +77,20 @@ function handleButtonClick(event, button, modal) {
   }
 }
 
-// Функция обработки добавления в корзину
+// Функция для добавления продукта в корзину
 function addProductToCartHandler(button) {
   cart.addProduct(products[button.id - 1]);
   updateCartModal();
 }
 
-// Функция обновления модального окна
+// Функция для обновления модального окна корзины
 function updateCartModal() {
   const cartModalBody = cartModalElement.querySelector(".modal-body");
   cartModalBody.innerHTML = cart.renderCart();
   handleCartButtonClicked();
 }
 
-// Функция обработки нажатия на кнопки в корзине
+// Функция для обработки кликов по кнопкам в корзине
 function handleCartButtonClicked() {
   const cartButtons = document.querySelectorAll(
     "#remove-from-cart, #increase-quantity, #decrease-quantity"
@@ -112,13 +110,14 @@ function handleCartButtonClicked() {
   });
 }
 
-// Фильтрация
+// Обработчик события для формы поиска
 formElement.addEventListener("submit", (event) => {
   event.preventDefault();
   filterProducts();
 });
 searchInputElement.addEventListener("input", filterProducts);
 
+// Функция для фильтрации продуктов
 function filterProducts() {
   const searchValue = searchInputElement.value.toLowerCase();
   const filteredProducts = products.filter((product) =>
@@ -127,4 +126,5 @@ function filterProducts() {
   renderProductCards(filteredProducts);
 }
 
+// Инициализация приложения
 init();

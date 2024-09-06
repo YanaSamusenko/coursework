@@ -1,3 +1,4 @@
+// Класс для работы с продуктами
 export class Product {
   constructor(id, title, price, category, image, description) {
     this.id = id;
@@ -8,7 +9,7 @@ export class Product {
     this.description = description;
   }
 
-  // Метод для создания карточки
+  // Метод для создания карточки продукта
   createProductCard() {
     return `
       <div class="cards__card" id="${this.id}" style="width: 18rem;">
@@ -29,7 +30,7 @@ export class Product {
     `;
   }
 
-  // Метод для создания модального окна с карточкой
+  // Метод для создания модальной карточки продукта
   createProductCardModal() {
     return `
       <div class="modal__card">
@@ -41,8 +42,6 @@ export class Product {
         </div>
         <button type="button" id="add-to-cart" class="btn btn-primary">Добавить в корзину</button>
       </div>
-
-      
     `;
   }
 }

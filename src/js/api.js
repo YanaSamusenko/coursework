@@ -1,7 +1,7 @@
-export const API_URL =
-  "https://66da17524ad2f6b8ed56f3b4.mockapi.io/api/product";
+// URL для запроса к API
+export const API_URL = "https://66da17524ad2f6b8ed56f3b4.mockapi.io/api/product";
 
-// Запрос к API
+// Асинхронная функция для получения продуктов с API
 export async function fetchProducts() {
   try {
     const response = await fetch(API_URL);
