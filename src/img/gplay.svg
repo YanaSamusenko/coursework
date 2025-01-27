@@ -1,0 +1,22 @@
+<svg width="44.000000" height="44.000000" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1_981">
+			<rect id="image" width="20.000000" height="22.000000" transform="translate(12.000000 11.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+		<clipPath id="clip1_980">
+			<rect id="image fill" width="20.000000" height="22.000000" transform="translate(12.000000 11.000000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Item → Link" rx="8.000000" width="44.000000" height="44.000000" fill="#000000" fill-opacity="1.000000"/>
+	<g clip-path="url(#clip1_980)">
+		<g clip-path="url(#clip1_981)">
+			<path id="Vector" d="M21.311 21.5081L12.083 31.177C12.1867 31.5442 12.3729 31.8828 12.6275 32.1672C12.8821 32.4514 13.1983 32.6736 13.5519 32.8169C13.9056 32.9602 14.2873 33.0208 14.6679 32.9939C15.0485 32.967 15.418 32.8535 15.748 32.6621L26.132 26.748L21.312 21.5081L21.311 21.5081Z" fill="#EA4335" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M30.643 19.864L26.153 17.292L21.098 21.728L26.173 26.7339L30.629 24.1899C31.024 23.9834 31.3549 23.6726 31.5858 23.2913C31.8166 22.9099 31.9387 22.4727 31.9387 22.0271C31.9387 21.5813 31.8166 21.144 31.5858 20.7627C31.3549 20.3813 31.024 20.0706 30.629 19.864L30.643 19.864Z" fill="#FBBC04" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M12.083 12.8301C12.0272 13.0356 11.9993 13.248 12 13.4612L12 30.543C12 30.7561 12.028 30.969 12.083 31.176L21.628 21.7542L12.083 12.8301Z" fill="#4285F4" fill-opacity="1.000000" fill-rule="nonzero"/>
+			<path id="Vector" d="M21.38 22.0029L26.153 17.293L15.783 11.3501C15.3922 11.1213 14.9478 11.0007 14.495 11C13.9493 10.9993 13.4183 11.1768 12.9829 11.5059C12.5475 11.8347 12.2315 12.2969 12.083 12.822L21.38 22.002L21.38 22.0029Z" fill="#34A853" fill-opacity="1.000000" fill-rule="nonzero"/>
+		</g>
+	</g>
+</svg>

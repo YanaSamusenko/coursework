@@ -1,0 +1,141 @@
+.header {
+  background: linear-gradient(to right, #cb11ab 0, #481173 100%);
+  padding: 20px 0px;
+  // max-height: 200px;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.form {
+  width: 100%;
+}
+
+.header__logo {
+  margin: 10px;
+  padding: 0 20px;
+  border-radius: 50px;
+
+  img {
+    width: 250px;
+  }
+}
+
+.form__item {
+  max-width: 1000px;
+
+  input {
+    width: 100%;
+    line-height: 60px;
+    font-size: 25px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 0 50px;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+.fa-solid {
+  color: #fff;
+  font-size: 30px;
+  margin: 0 10px;
+}
+
+// Modal Basket style
+.modal-content {
+  .modal-header {
+    background: linear-gradient(to right, #cb11ab 0, #481173 100%);
+    margin-bottom: 20px;
+    .modal-title {
+      font-size: 25px;
+      line-height: 25px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: lowercase;
+      font-family: "Montserrat", sans-serif;
+    }
+  }
+
+  .modal-body {
+    .cart {
+      .cart-card {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        margin-bottom: 30px;
+
+        .cart-card__image {
+          overflow: hidden;
+          width: 50%;
+
+          img {
+            height: 150px;
+            max-width: 400px;
+            object-fit: fill;
+            object-position: center;
+          }
+        }
+      }
+
+      .card-body {
+        width: 50%;
+        .card-title {
+          font-size: 18px;
+          font-weight: 500;
+          color: $text-color;
+          text-transform: lowercase;
+          font-family: "Montserrat", sans-serif;
+        }
+
+        .card-text {
+          font-size: 18px;
+          font-weight: 500;
+          color: $text-color;
+          text-transform: lowercase;
+          font-family: "Montserrat", sans-serif;
+        }
+
+        .card-text-price {
+          font-size: 22px;
+          font-weight: 700;
+          color: $price-color;
+          text-transform: lowercase;
+          font-family: "Montserrat", sans-serif;
+        }
+      }
+    }
+  }
+
+  .cart-total {
+    font-size: 20px;
+    font-weight: 600;
+    color: $text-color;
+    text-transform: lowercase;
+    font-family: "Montserrat", sans-serif;
+
+    span {
+      color: $price-color;
+    }
+  }
+}
+
+.modal-footer {
+}

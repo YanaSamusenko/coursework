@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildberries</title>
+    <link rel="stylesheet" href="./scss/app.scss" />
+    <link rel="icon" href="./img/wb.ico" type="image/png" />
+    <script type="module" src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <a href="#" class="header__logo">
+            <img src="./img/logoWb.svg" alt="logo" />
+          </a>
+          <form id="searchForm" class="form">
+            <div class="form__item">
+              <input
+                type="text"
+                name="search"
+                id="searchInput"
+                placeholder="Найти на Wildberries"
+              />
+            </div>
+          </form>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <i class="fa-solid fa-basket-shopping"></i>
+            <div class="basket_count modal__hide"></div>
+          </button>
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Корзина</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <ul class="modal__list"></ul>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Закрыть
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Оформить
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="main">
+      <div class="container">
+        <div class="container__carousel">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./img/wbCl.webp" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="./img/wbCl2.webp" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="./img/wbCl3.webp" class="d-block w-100" alt="..." />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="container cards__container"></div>
+          <div class="modal fade" id="cardsModal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__columns">
+          <div class="footer__column-1">
+            <a href="#"><h2 class="footer-link">Покупателям</h2></a>
+            <a href=""><p>Как сделать заказ</p></a>
+            <a href=""><p>Способы оплаты</p></a>
+            <a href=""><p>Доставка</p></a>
+            <a href=""><p>Возврат товара</p></a>
+            <a href=""><p>Возврат денежных средств</p></a>
+            <a href=""><p>Правила продажи</p></a>
+            <a href=""><p>Политика обработки персональных данных</p></a>
+            <a href=""><p>Вопросы и ответы</p></a>
+            <a href=""><p>Проверка совместимости</p></a>
+          </div>
+          <div class="footer__column-2">
+            <a href="#"><h2 class="footer-link">Партнерам</h2></a>
+            <a href=""><p>Продавайте на Wildberries</p></a>
+            <a href=""><p>Водителям</p></a>
+            <a href=""><p>Курьерам</p></a>
+            <a href=""><p>Перевозчикам</p></a>
+            <a href=""><p>Партнерский пункт выдачи</p></a>
+            <a href=""><p>Франшизный пункт выдачи</p></a>
+          </div>
+          <div class="footer__column-3">
+            <a href="#"><h2 class="footer-link">Компания</h2></a>
+            <a href=""><p>О нас</p></a>
+            <a href=""><p>Реквизиты</p></a>
+            <a href=""><p>Пресс-центр</p></a>
+            <a href=""><p>Контакты</p></a>
+            <a href=""><p>Bug Bounty</p></a>
+            <a href=""><p>Горячая линия</p></a>
+            <a href=""><p>WB.Tech</p></a>
+          </div>
+          <div class="footer__column-4">
+            <a href="#"><h2 class="footer-link">Мы в соцсетях</h2></a>
+            <a href=""><p>ВКонтакте</p></a>
+            <a href=""><p>Одноклассники</p></a>
+            <a href=""><p>YouTube</p></a>
+            <a href=""><p>Телеграм</p></a>
+          </div>
+          <div class="footer__column-5">
+            <a href="#"><h2 class="footer-link">Приложение Wildberries</h2></a>
+            <div class="wildberries__box">
+              <div class="qr"></div>
+              <p class="footer-apps__text">
+                Наведите камеру, чтобы скачать приложение
+              </p>
+              <div class="apps">
+                <div class="apple"></div>
+                <div class="gplay"></div>
+                <div class="huawei"></div>
+                <div class="rustore"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <p>
+            2004-2024 © Wildberries — модный интернет-магазин одежды, обуви и
+            аксессуаров. Все права защищены. Доставка по всей России.
+          </p>
+          <p>
+            На Торговой площадке wildberries.ru
+            <a href="#" class="footer__link"
+              >применяются рекомендательные технологии</a
+            >. Адрес для&nbsp;направления юридически значимых сообщений:
+            sales@wildberries.ru
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
